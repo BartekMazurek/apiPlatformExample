@@ -1,5 +1,5 @@
 # simpleLibrary example - (Angular frontend + REST API based on Api-Platform framework)
-simpleLibrary is a small library management proof of concept based on Symfony Api-Platform framework (backend folder) and Angular (frontend folder).
+simpleLibrary is a small library management proof of concept based on Symfony Api-Platform framework (libraryapi folder) and Angular (library folder).
 
 ![Stocks API image](http://bartekblog.prv.pl/api_platform/api0.png)
 ![Stocks API image](http://bartekblog.prv.pl/api_platform/api1.png)
@@ -23,7 +23,7 @@ simpleLibrary is a small library management proof of concept based on Symfony Ap
 # How to set up - Angular frontend
 **1** - Download Angular dependencies, run in project root directory terminal command: **npm install**
 
-**2** - Set proper path to backend endpoints (backend folder application) in **environment.ts** file (**src/environments/environment.ts**)
+**2** - Set proper path to backend endpoints (libraryapi folder) in **environment.ts** file (**src/environments/environment.ts**)
 
 **3** - To run application in development mode run terminal command: **ng serve**
 
