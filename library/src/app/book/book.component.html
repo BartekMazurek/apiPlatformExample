@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Add new book</h3>
+  </div>
+  <div class="card-body">
+    <form #bookForm (ngSubmit)="bookSubmit(bookForm)">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" maxlength="20" required [(ngModel)]="titleValue">
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <select class="form-control" name="author" required>
+          <option *ngFor="let author of authors" value="{{ author.id }}">{{ author.firstname}} {{ author.lastname }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Release date</label>
+        <input type="date" class="form-control" name="release_date" maxlength="20" required [(ngModel)]="releaseValue">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name="description" maxlength="500" rows="3" required [(ngModel)]="descriptionValue"></textarea>
+      </div>
+      <div *ngIf="submittedStatus" class="form-group">
+        <div *ngIf="submittedMessage">
+          <div *ngIf="submittedMessage == 'success'" class="alert alert-success" role="alert">
+            New book has been added.
+          </div>
+          <div *ngIf="submittedMessage == 'error'" class="alert alert-danger" role="alert">
+            An error has occured.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitted">Save</button>
+    </form>
+  </div>
+</div>
